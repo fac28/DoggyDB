@@ -9,7 +9,8 @@
     "test": "node --test",
     "seed": "node database/seed.js",
     "test:serverGet": "node  test/serverGetTest.js",
-    "test:serverPost": "node test/serverPostTest.js"
+    "test:serverPost": "node test/serverPostTest.js",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
