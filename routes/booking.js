@@ -12,6 +12,7 @@ function get(req, res) {
     title = "Bookings";
     content = Table({ caption: title, data: bookings });
   }
+  content += /*html*/`<a href="/book"><button>Add booking</button></a>`
   const body = Layout({ title, content });
   res.send(body);
 }
