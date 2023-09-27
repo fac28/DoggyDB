@@ -11,14 +11,23 @@ function get(req, res) {
 }
 
 function post(req, res) {
+
+  console.log(req.body)
+  
   const dog_name = req.body.dog_name;
   const date = req.body.date;
+  const owner_name = req.body.owner_name;
+  const breed = req.body.breed;
 
-  const booking = { dog_name, date };
+  const booking = { dog_name, date, owner_name, breed };
 
-  createBooking(booking);
-
-  res.redirect("/");
+  try {
+    createBooking(booking);
+    res.redirect("/");
+  } catch (error) {
+    console.error("Error creating booking:", error);
+    res.status(500).send("Internal Server Error");
+  }
 }
 
 module.exports = { get, post };

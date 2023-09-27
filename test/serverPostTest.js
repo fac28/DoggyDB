@@ -3,9 +3,16 @@ const assert = require("node:assert");
 const { request } = require("./helpers.js");
 
 test("form updates database", async () => {
-  const post_response = await request("/form", {
+  const requestBody = {
+    dog_name: "Bruno",
+    date: "2024-01-02",
+    owner_name: "Deepa",
+    breed: "Cocker Spaniel"
+  };
+
+  const post_response = await request("/book", {
     method: "POST",
-    body: "owner_name=Deepa&dog_name=Bruno&breed=Cocker Spaniel&date=2024-01-02",
+    body: new URLSearchParams(requestBody).toString(),
     headers: { "content-type": "application/x-www-form-urlencoded" },
     redirect: "manual",
   });

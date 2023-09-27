@@ -28,6 +28,8 @@ const addOwner = db.prepare(/*sql*/ `
 `);
 
 function createOwner(owner){
+  console.log('Owner: ', owner)
+
   const ownerInfo = findOwnerId(owner);
   if(ownerInfo===undefined) {
     addOwner.run({
