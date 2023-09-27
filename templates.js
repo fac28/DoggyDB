@@ -1,8 +1,9 @@
-function Layout ({ title, content }) {
+function Layout({ title, content }) {
   return /* html */ `
       <!doctype html>
       <html lang="en">
         <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
           <meta charset="UTF-8">
           <title>${title}</title>
           <link rel="stylesheet" href="styles.css" />
@@ -15,10 +16,10 @@ function Layout ({ title, content }) {
           </div>
         </body>
       </html>
-    `
+    `;
 }
 
-function AddBooking () {
+function AddBooking() {
   return /* html */ `
   <h1> Book Appointment</h1>
       <form method="POST" action="/book">
@@ -49,18 +50,18 @@ function AddBooking () {
 </p>
         <button>Submit</button>
       </form>
-  `
+  `;
 }
 
-function Table ({ caption, data, sortColumn, sortOrder }) {
-  const keys = Object.keys(data[0])
+function Table({ caption, data, sortColumn, sortOrder }) {
+  const keys = Object.keys(data[0]);
 
   // Function to toggle the sorting order
-  function toggleSortOrder (column) {
+  function toggleSortOrder(column) {
     if (sortColumn === column) {
-      return sortOrder === 'asc' ? 'desc' : 'asc'
+      return sortOrder === "asc" ? "desc" : "asc";
     } else {
-      return 'asc'
+      return "asc";
     }
   }
 
@@ -71,34 +72,40 @@ function Table ({ caption, data, sortColumn, sortOrder }) {
         <caption>${caption} <small>(${data.length})</small></caption>
         <thead>
           <tr>
-            ${keys.map((key) => `
+            ${keys
+              .map(
+                (key) => `
               <th>
                 <a href="?sort=${key}&order=${toggleSortOrder(key)}">
-                  ${key} ${sortColumn === key ? (sortOrder === 'asc' ? '▲' : '▼') : ''}
+                  ${key} ${
+                    sortColumn === key ? (sortOrder === "asc" ? "▲" : "▼") : ""
+                  }
                 </a>
               </th>
-            `).join('')}
+            `
+              )
+              .join("")}
 
           </tr>
         </thead>
         <tbody>
-          ${data.map(Row).join('')}
+          ${data.map(Row).join("")}
         </tbody>
       </table>
     </div>
-  `
+  `;
 }
 
-function Row (entry) {
+function Row(entry) {
   return /* html */ `
     <tr>
       ${Object.values(entry)
         .map((val) => `<td>${val}</td>`)
-        .join('')}
+        .join("")}
     </tr>
-  `
+  `;
 }
-function AddCustomer () {
+function AddCustomer() {
   return /* html */ `
 <h1> Register </h1>
       <form method="POST" action="/register">
@@ -124,7 +131,7 @@ function AddCustomer () {
 
         <button>Submit</button>
       </form>
-  `
+  `;
 }
 
-module.exports = { Layout, Table, AddBooking, AddCustomer }
+module.exports = { Layout, Table, AddBooking, AddCustomer };
