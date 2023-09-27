@@ -5,7 +5,7 @@ function Layout({ title, content }) {
         <head>
           <meta charset="UTF-8">
           <title>${title}</title>
-         
+
         </head>
         <body>
           <div class="layout">
@@ -21,7 +21,7 @@ function Layout({ title, content }) {
 function AddBooking() {
   return /*html*/ `
 
-      <form method="POST" action="/form">
+      <form method="POST" action="/book">
         <p>
 
           <label for="owner_name">Owner's Name</label>
@@ -80,5 +80,33 @@ function Row(entry) {
     </tr>
   `;
 }
+function AddCustomer() {
+  return /*html*/ `
 
-module.exports = { Layout, Table, AddBooking };
+      <form method="POST" action="/register">
+        <p>
+
+          <label for="owner_name">Owner's Name</label>
+          <input name="owner_name" id="owner_name" >
+
+        </p>
+        <p>
+
+        <label for="dog_name">Dog's Name</label>
+        <input name="dog_name" id="dog_name" >
+
+      </p>
+
+    <p>
+
+    <label for="breed">Dog's breed</label>
+    <input name="breed" id="breed" >
+
+  </p>
+
+        <button>Submit</button>
+      </form>
+  `;
+}
+
+module.exports = { Layout, Table, AddBooking, AddCustomer };
