@@ -3,7 +3,7 @@ const assert = require("node:assert");
 const { request } = require("./helpers.js");
 
 test("/ returns form page", async () => {
-  const { status, body } = await request("/form");
+  const { status, body } = await request("/book");
 
   assert.equal(status, 200);
   assert.match(

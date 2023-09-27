@@ -11,8 +11,6 @@ function get(req, res) {
 
 function post(req, res) {
 
-  console.log(req.body);
-
   const dog_name = req.body.dog_name;
   const owner_name = req.body.owner_name;
   const dog_breed = req.body.breed;
