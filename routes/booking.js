@@ -1,4 +1,4 @@
-const { Layout, Table, AddBooking } = require("../templates.js");
+const { Layout, Table } = require("../templates.js");
 const { listBookings } = require("../model/bookings.js");
 
 function get(req, res) {
