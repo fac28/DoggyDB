@@ -52,16 +52,33 @@ function AddBooking () {
   `
 }
 
-function Table ({ caption, data }) {
-  const keys = Object.keys(data[0])
-  return /* html */ `
+function Table({ caption, data, sortColumn, sortOrder }) {
+  const keys = Object.keys(data[0]);
+
+  // Function to toggle the sorting order
+  function toggleSortOrder(column) {
+    if (sortColumn === column) {
+      return sortOrder === "asc" ? "desc" : "asc";
+    } else {
+      return "asc";
+    }
+  }
+
+  return /*html*/ `
     <div class="table-wrapper">
     <h1> DoggyDB </h1>
       <table>
         <caption>${caption} <small>(${data.length})</small></caption>
         <thead>
           <tr>
-            ${keys.map((key) => `<th>${key}</th>`).join('')}
+            ${keys.map((key) => `
+              <th>
+                <a href="?sort=${key}&order=${toggleSortOrder(key)}">
+                  ${key} ${sortColumn === key ? (sortOrder === "asc" ? "▲" : "▼") : ""}
+                </a>
+              </th>
+            `).join("")}
+
           </tr>
         </thead>
         <tbody>
