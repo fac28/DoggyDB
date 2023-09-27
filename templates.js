@@ -1,5 +1,5 @@
-function Layout({ title, content }) {
-  return /*html*/ `
+function Layout ({ title, content }) {
+  return /* html */ `
       <!doctype html>
       <html lang="en">
         <head>
@@ -15,11 +15,11 @@ function Layout({ title, content }) {
           </div>
         </body>
       </html>
-    `;
+    `
 }
 
-function AddBooking() {
-  return /*html*/ `
+function AddBooking () {
+  return /* html */ `
   <h1> Book Appointment</h1>
       <form method="POST" action="/book">
         <p>
@@ -49,40 +49,40 @@ function AddBooking() {
 </p>
         <button>Submit</button>
       </form>
-  `;
+  `
 }
 
-function Table({ caption, data }) {
-  const keys = Object.keys(data[0]);
-  return /*html*/ `
+function Table ({ caption, data }) {
+  const keys = Object.keys(data[0])
+  return /* html */ `
     <div class="table-wrapper">
     <h1> DoggyDB </h1>
       <table>
         <caption>${caption} <small>(${data.length})</small></caption>
         <thead>
           <tr>
-            ${keys.map((key) => `<th>${key}</th>`).join("")}
+            ${keys.map((key) => `<th>${key}</th>`).join('')}
           </tr>
         </thead>
         <tbody>
-          ${data.map(Row).join("")}
+          ${data.map(Row).join('')}
         </tbody>
       </table>
     </div>
-  `;
+  `
 }
 
-function Row(entry) {
-  return /*html*/ `
+function Row (entry) {
+  return /* html */ `
     <tr>
       ${Object.values(entry)
         .map((val) => `<td>${val}</td>`)
-        .join("")}
+        .join('')}
     </tr>
-  `;
+  `
 }
-function AddCustomer() {
-  return /*html*/ `
+function AddCustomer () {
+  return /* html */ `
 <h1> Register </h1>
       <form method="POST" action="/register">
         <p>
@@ -107,7 +107,7 @@ function AddCustomer() {
 
         <button>Submit</button>
       </form>
-  `;
+  `
 }
 
-module.exports = { Layout, Table, AddBooking, AddCustomer };
+module.exports = { Layout, Table, AddBooking, AddCustomer }
