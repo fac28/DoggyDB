@@ -7,7 +7,10 @@
     "start": "node index.js",
     "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "seed": "node database/seed.js"
+    "seed": "node database/seed.js",
+    "test": "node --test",
+    "test:serverGet": "node  test/serverGetTest.js",
+    "test:serverPost": "node test/serverPostTest.js"
   },
   "repository": {
     "type": "git",
