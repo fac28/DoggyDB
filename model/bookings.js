@@ -22,7 +22,6 @@ const insert_booking = db.prepare(/*sql*/ `
 
 function createBooking(booking) {
   const dogInfo = findID(booking.dog_name, booking.owner_name);
-  console.log(dogInfo)
 
   if(dogInfo){
     const {dogID} = dogInfo;
@@ -33,11 +32,13 @@ function createBooking(booking) {
     });
   } else {
     console.log('customer not found')
-    // create owner if there's not one yet
-    createOwner(booking.owner_name)
 
-    // create customer if there's not one yet
-    createCustomer(booking.dog_name);
+    if(booking.owner_name && booking.dog_name){
+      // create owner if there's not one yet
+      createOwner(booking.owner_name)
+      // create customer if there's not one yet
+      createCustomer(booking.dog_name);
+    }
   };
 }
 
