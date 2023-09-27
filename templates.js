@@ -5,7 +5,7 @@ function Layout({ title, content }) {
         <head>
           <meta charset="UTF-8">
           <title>${title}</title>
-
+          <link rel="stylesheet" href="styles.css" />
         </head>
         <body>
           <div class="layout">
@@ -20,7 +20,7 @@ function Layout({ title, content }) {
 
 function AddBooking() {
   return /*html*/ `
-
+  <h1> Book Appointment</h1>
       <form method="POST" action="/book">
         <p>
 
@@ -56,6 +56,7 @@ function Table({ caption, data }) {
   const keys = Object.keys(data[0]);
   return /*html*/ `
     <div class="table-wrapper">
+    <h1> DoggyDB </h1>
       <table>
         <caption>${caption} <small>(${data.length})</small></caption>
         <thead>
@@ -82,7 +83,7 @@ function Row(entry) {
 }
 function AddCustomer() {
   return /*html*/ `
-
+<h1> Register </h1>
       <form method="POST" action="/register">
         <p>
 
