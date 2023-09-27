@@ -1,8 +1,17 @@
-const { Layout, AddBooking } = require("../templates.js");
+const { Layout, Table, AddBooking } = require("../templates.js");
+const { listBookings } = require("../model/bookings.js");
 
 function get(req, res) {
-  const title = "Book Appointment";
-  const content = AddBooking();
+  let title = "Appointments";
+  const bookings = listBookings();
+  if (bookings.length == 0) {
+    res.status(404);
+    title = "No bookings found";
+    content = "<h1>No bookings found</h1>";
+  } else {
+    title = "Bookings";
+    content = Table({ caption: title, data: bookings });
+  }
   const body = Layout({ title, content });
   res.send(body);
 }
