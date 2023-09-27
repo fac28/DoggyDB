@@ -2,7 +2,9 @@
 
 DoggyDB is a site made for dogs who are looking to book their next salon treatments at _insert-salon-name_.
 
+## Remote Deployment
 
+This app is deployed on fly.io and can be accessed at: https://doggydb.fly.dev/
 ## Run Locally
 
 Clone the project
