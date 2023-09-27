@@ -9,7 +9,7 @@
     "seed": "DB_FILE=db.sqlite node database/seed.js",
     "test": "DB_FILE=test.sqlite node --test",
     "test:serverGet": "DB_FILE=test.sqlite node test/serverGetTest.js",
-    "test:serverPost": "DB_FILE=test.sqlite node test/serverPostTest.js"
+    "test:serverPost": "DB_FILE=test.sqlite node test/serverPostTest.js",
     "lint": "eslint ."
   },
   "repository": {
