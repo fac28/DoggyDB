@@ -2,9 +2,9 @@ const { Layout, AddBooking } = require("../templates.js");
 const { createBooking } = require("../model/bookings.js");
 
 function get(req, res) {
-  let title = "Book Appointments";
-
-  let content = AddBooking();
+  const title = "Book Appointments";
+  const content = AddBooking();
+  
   const body = Layout({ title, content });
 
   res.send(body);
@@ -13,7 +13,7 @@ function get(req, res) {
 function post(req, res) {
 
   console.log(req.body)
-  
+
   const dog_name = req.body.dog_name;
   const date = req.body.date;
   const owner_name = req.body.owner_name;

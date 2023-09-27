@@ -2,9 +2,9 @@ const { Layout, AddCustomer} = require("../templates.js");
 const { createCustomer, createOwner } = require("../model/customers.js");
 
 function get(req, res) {
-  let title = "Add Customer";
-
+  const title = "Add Customer";
   const content = AddCustomer();
+
   const body = Layout({ title, content });
   res.send(body);
 }

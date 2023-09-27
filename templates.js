@@ -25,26 +25,26 @@ function AddBooking() {
         <p>
 
           <label for="owner_name">Owner's Name</label>
-          <input name="owner_name" id="owner_name" value = 'Deepa' v>
+          <input name="owner_name" id="owner_name" value = 'Deepa' required>
 
         </p>
         <p>
 
         <label for="dog_name">Dog's Name</label>
-        <input name="dog_name" id="dog_name" value='Bruno'>
+        <input name="dog_name" id="dog_name" value='Bruno' required>
 
       </p>
 
     <p>
 
     <label for="breed">Dog's breed</label>
-    <input name="breed" id="breed" value='Cocker Spaniel'>
+    <input name="breed" id="breed" value='Cocker Spaniel' required>
 
   </p>
   <p>
 
   <label for="date">Appointment Date</label>
-  <input name="date" type = "date" id="date" value = '2024-01-01'>
+  <input name="date" type = "date" id="date" value = '2024-01-01' required>
 
 </p>
         <button>Submit</button>
@@ -88,20 +88,20 @@ function AddCustomer() {
         <p>
 
           <label for="owner_name">Owner's Name</label>
-          <input name="owner_name" id="owner_name" >
+          <input name="owner_name" id="owner_name" required>
 
         </p>
         <p>
 
         <label for="dog_name">Dog's Name</label>
-        <input name="dog_name" id="dog_name" >
+        <input name="dog_name" id="dog_name" required>
 
       </p>
 
     <p>
 
     <label for="breed">Dog's breed</label>
-    <input name="breed" id="breed" >
+    <input name="breed" id="breed" required>
 
   </p>
 
