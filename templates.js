@@ -20,35 +20,65 @@ function Layout({ title, content }) {
 
 function AddBooking() {
   return /*html*/ `
-      
-      <form method="POST">
+
+      <form method="POST" action="/form">
         <p>
-        
+
           <label for="owner_name">Owner's Name</label>
-          <input name="owner_name" id="owner_name">
-          
+          <input name="owner_name" id="owner_name" value = 'Deepa' v>
+
         </p>
         <p>
-        
+
         <label for="dog_name">Dog's Name</label>
-        <input name="dog_name" id="dog_name">
-        
+        <input name="dog_name" id="dog_name" value='Bruno'>
+
       </p>
- 
+
     <p>
-        
+
     <label for="breed">Dog's breed</label>
-    <input name="breed" id="breed">
-    
+    <input name="breed" id="breed" value='Cocker Spaniel'>
+
   </p>
   <p>
-        
+
   <label for="date">Appointment Date</label>
-  <input name="date" type = "date" id="date">
-  
-</p> 
+  <input name="date" type = "date" id="date" value = '2024-01-01'>
+
+</p>
         <button>Submit</button>
       </form>
   `;
 }
-module.exports = { Layout, AddBooking };
+
+function Table({ caption, data }) {
+  const keys = Object.keys(data[0]);
+  return /*html*/ `
+    <div class="table-wrapper">
+      <table>
+        <caption>${caption} <small>(${data.length})</small></caption>
+        <thead>
+          <tr>
+            ${keys.map((key) => `<th>${key}</th>`).join("")}
+          </tr>
+        </thead>
+        <tbody>
+          ${data.map(Row).join("")}
+        </tbody>
+      </table>
+    </div>
+  `;
+}
+
+function Row(entry) {
+  return /*html*/ `
+    <tr>
+      ${Object.values(entry)
+        .map((val) => `<td>${val}</td>`)
+        .join("")}
+    </tr>
+  `;
+}
+
+module.exports = { Layout, Table, AddBooking };
