@@ -46,9 +46,11 @@ function createCustomer (customer) {
   const { ownerID } = findOwnerId(customer.owner_name)
 
   if (isRegistered(customer.dog_name, customer.owner_name) === false) {
-    addCustomer.run({
+    console.log('registering you now')
+
+    return addCustomer.run({
       name: customer.dog_name,
-      breed: customer.dog_breed,
+      breed: customer.breed,
       owner: ownerID
     })
   }
