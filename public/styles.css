@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+body {
+  background: url(./pauline-loroy-U3aF7hgUSrk-unsplash.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  font-family: "Roboto", sans-serif;
+}
+
+main {
+  padding: 2rem;
+}
+
+.table-wrapper {
+  text-align: left;
+  width: 50%;
+  background-color: rgba(255, 255, 255, 0.276);
+  font-variant-numeric: tabular-nums;
+  border-radius: 5px;
+  padding: 10px;
+}
+h1 {
+  margin: 5px;
+  color: rgb(51, 117, 117);
+}
+table {
+  border-collapse: collapse;
+  text-transform: uppercase;
+}
+
+caption {
+  padding: 1rem;
+  background-color: white;
+  font-weight: bold;
+}
+
+th,
+td {
+  padding: 0.5rem 1rem;
+}
+form {
+  background-color: rgba(255, 255, 255, 0.276);
+  padding: 10px;
+  width: 50vw;
+  border-radius: 5px;
+}
