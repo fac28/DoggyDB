@@ -1,4 +1,4 @@
-const { Layout, Table, AddBooking } = require("../templates.js");
+const { Layout, Table } = require("../templates.js");
 const { listBookings } = require("../model/bookings.js");
 
 function get(req, res) {
@@ -12,6 +12,7 @@ function get(req, res) {
     title = "Bookings";
     content = Table({ caption: title, data: bookings });
   }
+  content += /*html*/`<a href="/book"><button>Add booking</button></a>`
   const body = Layout({ title, content });
   res.send(body);
 }

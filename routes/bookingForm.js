@@ -4,8 +4,10 @@ const { createBooking } = require("../model/bookings.js");
 function get(req, res) {
   let title = "Book Appointments";
 
-  const content = AddBooking();
+  let content = AddBooking();
+  content += /*html*/`<a href="/register"><button>Register as a new customer</button></a>`
   const body = Layout({ title, content });
+
   res.send(body);
 }
 
