@@ -1,4 +1,5 @@
 const db = require("../database/db.js");
+const { findID } = require('./helpers.js');
 
 const allBookings = db.prepare(/*sql*/ `
   SELECT date, dog_name AS customer, dog_breed AS breed, owner_name AS hooman
@@ -11,19 +12,6 @@ function listBookings() {
   return allBookings.all();
 }
 
-const selectedDog = db.prepare(/*sql*/ `
-  SELECT dogs.id as dogID
-  FROM dogs
-  JOIN bookings on dogs.id = bookings.dog_id
-  WHERE dogs.dog_name = $name
-  `);
-
-// we collect dog's name from the form
-// then find the dog's id using its name
-function findID(name) {
-  return selectedDog.get({ name });
-}
-
 const insert_booking = db.prepare(/*sql*/ `
   INSERT INTO bookings (dog_id, date)
   VALUES ($id, $date)
@@ -31,17 +19,18 @@ const insert_booking = db.prepare(/*sql*/ `
 `);
 
 function createBooking(booking) {
-  const dogInfo = findID(booking.dog_name);
+  const dogInfo = findID(booking.dog_name, booking.owner_name);
 
   if(dogInfo){
-    dogId = dogInfo['dogID']
+    const {dogID} = dogInfo;
 
     return insert_booking.run({
-      id: dogId,
+      id: dogID,
       date: booking.date,
     });
   } else {
-    console.log('dog not found')
+    console.log('customer not found')
+    // redirect to add customer page
   };
 }
 
