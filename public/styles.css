@@ -15,7 +15,7 @@ main {
 
 .table-wrapper {
   text-align: left;
-  width: 50%;
+  width: fit-content;
   background-color: rgba(255, 255, 255, 0.276);
   font-variant-numeric: tabular-nums;
   border-radius: 5px;
