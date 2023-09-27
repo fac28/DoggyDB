@@ -35,7 +35,7 @@ function createBooking (booking) {
     // create owner if there's not one yet
     createOwner(booking.owner_name)
     // create customer if there's not one yet
-    createCustomer(booking.dog_name)
+    createCustomer(booking)
   };
 }
 

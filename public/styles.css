@@ -14,19 +14,23 @@ main {
 
 .table-wrapper {
   text-align: left;
-  width: 50%;
+  width: fit-content;
   background-color: rgba(255, 255, 255, 0.276);
   font-variant-numeric: tabular-nums;
   border-radius: 5px;
   padding: 10px;
 }
+
 h1 {
   margin: 5px;
   color: rgb(51, 117, 117);
 }
+
 table {
   border-collapse: collapse;
   text-transform: uppercase;
+  width: 80%;
+  margin: auto;
 }
 
 caption {
@@ -39,6 +43,7 @@ th,
 td {
   padding: 0.5rem 1rem;
 }
+
 form {
   background-color: rgba(255, 255, 255, 0.276);
   padding: 10px;
