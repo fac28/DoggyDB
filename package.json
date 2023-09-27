@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js",
-    "test": "node --test",
-    "seed": "node database/seed.js",
-    "test:serverGet": "node  test/serverGetTest.js",
-    "test:serverPost": "node test/serverPostTest.js",
+    "dev": "DB_FILE=db.sqlite nodemon index.js",
+    "seed": "DB_FILE=db.sqlite node database/seed.js",
+    "test": "DB_FILE=test.sqlite node --test",
+    "test:serverGet": "DB_FILE=test.sqlite node test/serverGetTest.js",
+    "test:serverPost": "DB_FILE=test.sqlite node test/serverPostTest.js"
     "lint": "eslint ."
   },
   "repository": {

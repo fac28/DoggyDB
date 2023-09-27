@@ -2,7 +2,7 @@ const { readFileSync } = require('node:fs')
 const { join } = require('node:path')
 const Database = require('better-sqlite3')
 
-const db = new Database('db.sqlite')
+const db = new Database(process.env.DB_FILE)
 console.log(db)
 
 const schemaPath = join('database', 'schema.sql')
