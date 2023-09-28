@@ -23,9 +23,13 @@ main {
   width: fit-content;
 }
 
-h1 {
-  margin: 5px;
-  color: rgb(51, 117, 117);
+.home {
+  padding: 2px 25px;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  background-color: rgb(51, 117, 117);
+  cursor: pointer;
 }
 
 table {
