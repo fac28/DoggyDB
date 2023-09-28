@@ -3,7 +3,7 @@ const assert = require('node:assert')
 const { request } = require('./helpers.js')
 const db = require('../database/db.js')
 
-test('form updates database', async () => {
+test('booking form updates database', async () => {
   const requestBody = {
     dog_name: 'Bruno',
     date: '1000-01-02',
@@ -36,7 +36,6 @@ const deleteTestBooking = db.prepare(/* sql */ `
 function removeTestBooking () {
   try {
     deleteTestBooking.run('1000-01-02')
-    console.log('Booking deleted successfully.')
   } catch (error) {
     console.error('Error deleting booking:', error)
   }
