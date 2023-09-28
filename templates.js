@@ -135,4 +135,11 @@ function AddCustomer () {
   `
 }
 
-module.exports = { Layout, Table, AddBooking, AddCustomer }
+function addBookingButton (content) {
+  return /* html */ `
+  ${content}
+  <a href="/book" id='bookbutt'><button>Add booking</button></a>
+  `
+}
+
+module.exports = { Layout, Table, AddBooking, AddCustomer, addBookingButton }
