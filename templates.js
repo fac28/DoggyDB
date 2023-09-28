@@ -11,7 +11,7 @@ function Layout ({ title, content }) {
         <body>
           <div class="layout">
             <main>
-          
+
             <a href="/"><button class="home"> <h1> DoggyDB </h1></button></a>
               ${content}
             </main>
@@ -28,20 +28,20 @@ function AddBooking () {
         <p>
 
           <label for="owner_name">Owner's Name</label>
-          <input name="owner_name" id="owner_name" value = 'Deepa' required>
+          <input name="owner_name" id="owner_name" required>
 
         </p>
         <p>
 
-        <label for="dog_name">Dog's Name</label>
-        <input name="dog_name" id="dog_name" value='Bruno' required>
+        <label for="dog_name">Your Name</label>
+        <input name="dog_name" id="dog_name" required>
 
       </p>
 
     <p>
 
-    <label for="breed">Dog's breed</label>
-    <input name="breed" id="breed" value='Cocker Spaniel' required>
+    <label for="breed">Your breed</label>
+    <input name="breed" id="breed" required>
 
   </p>
   <p>
