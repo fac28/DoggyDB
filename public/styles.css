@@ -15,12 +15,12 @@ main {
 
 .table-wrapper {
   text-align: left;
-  width: fit-content;
+  width: 100%;
   background-color: rgba(255, 255, 255, 0.276);
   font-variant-numeric: tabular-nums;
   border-radius: 5px;
   padding: 10px;
-  width: fit-content;
+  overflow-x: auto;
 }
 
 .home {
@@ -36,7 +36,8 @@ table {
   border-collapse: collapse;
   text-transform: uppercase;
   margin: auto;
-  width: 80%;
+  width: 100%;
+  max-width: 100%;
 }
 
 caption {
@@ -52,23 +53,48 @@ td {
 
 form {
   background-color: rgba(255, 255, 255, 0.276);
-  padding: 10px;
-  width: 80vw;
+  padding: 1% 2%;
   border-radius: 5px;
   width: fit-content;
 }
 
-@media only screen and (max-width: 768px) {
+button {
+  padding: 0.5rem 25px;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  background-color: rgb(51, 117, 117);
+  cursor: pointer;
+  margin: 1rem;
+  font-size: 1.2rem;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bolder;
+  color: rgb(51, 117, 117);
+}
+
+@media only screen and (max-width: 800px) {
   button,
   p,
   input {
-    font-size: 2rem;
+    font-size: 0.8rem;
   }
 
   #bookbutt {
     display: flex;
-    margin-left: 40%;
-    margin-right: 40%;
-    font-size: 0.5rem;
+    margin: auto;
+    justify-content: center;
+  }
+
+  .table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  table {
+    max-width: 100%;
+    font-size: 0.8rem;
   }
 }
