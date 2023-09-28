@@ -4,7 +4,7 @@ DoggyDB is a site made for dogs who are looking to book their next salon treatme
 
 ## Remote Deployment
 
-This app is deployed on fly.io and can be accessed at: https://doggydb.fly.dev/
+This app is deployed on fly.io and can be accessed at: <https://doggydb.fly.dev/>
 
 ## Run Locally
 
@@ -37,7 +37,6 @@ Start the server
 View all the current bookings on our home page and click on **'Add a Booking'** to make your booking.
 
 We welcome all new and existing customers. If you are not currently registered with us, we will automatically register you as a customer when you make your first booking.
-
 
 ## Schema
 

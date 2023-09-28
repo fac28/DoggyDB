@@ -30,14 +30,12 @@ function createBooking (booking) {
       date: booking.date
     })
   } else {
-    console.log('customer not found')
-
     // create owner if there's not one yet
     createOwner(booking.owner_name)
     // create customer if there's not one yet
     createCustomer(booking)
-    console.log('booking your appointment now')
     const { dogID } = findID(booking.dog_name, booking.owner_name)
+
     return insertBooking.run({
       id: dogID,
       date: booking.date
