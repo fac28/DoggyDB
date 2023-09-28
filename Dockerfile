@@ -40,5 +40,5 @@ VOLUME /data
 
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
-ENV DB_FILE="/data/sqlite.db"
+ENV DB_FILE="/data/db.sqlite"
 CMD [ "npm", "start" ]
