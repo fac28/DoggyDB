@@ -33,7 +33,7 @@ function get (req, res) {
   let content = Table({ caption: title, data: bookings, sortColumn, sortOrder })
 
   content = /* html */ `${content} <a href="/book" id='bookbutt'><button>Add booking</button></a>
-  `;
+  `
 
   const body = Layout({ title, content })
   res.send(body)
