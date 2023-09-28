@@ -7,6 +7,7 @@ function Layout ({ title, content }) {
           <meta charset="UTF-8">
           <title>${title}</title>
           <link rel="stylesheet" href="styles.css" />
+          <link rel="shortcut icon" type="image/png" href="/favicon.ico?" />
         </head>
         <body>
           <div class="layout">
@@ -106,6 +107,7 @@ function Row (entry) {
     </tr>
   `
 }
+
 function AddCustomer () {
   return /* html */ `
 <h1> Register </h1>
